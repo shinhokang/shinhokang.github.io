@@ -36,6 +36,7 @@ Jekyll은 ruby를 기반으로 한다. 따라서 로컬 환경에 ruby와 gem (r
   
 ### homebrew 설치 (macOS의 패키지 매니저 - ruby를 설치하기 )  
 참고: [https://brew.sh/](https://brew.sh/)
+
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
@@ -146,6 +147,13 @@ url: "https://username.gitlab.io"
 ```
 
 push까지 완료하면 곧 gitlab의 CI 기능이 실행되며 jekyll build 가 실행된다. 빌드가 완료되면 [https://username.gitlab.io](https://username.gitlab.io) 를 이용해 사이트를 볼 수 있게 된다.
+
+
+# Github-pages 이용하기
+참고: [https://angrypark.github.io/starting-my-blog/](https://angrypark.github.io/starting-my-blog/)  
+참고: [https://brunch.co.kr/@hee072794/39](https://brunch.co.kr/@hee072794/39)
+
+Github에서는 별도의 CI 설정이 필요없다..... (아니! 그럼 그냥 github으로 할걸!!)
 
 
 

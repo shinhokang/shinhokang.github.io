@@ -66,6 +66,9 @@ github을 이용하고 싶다면 `username.github.io` 를 사용하면 된다. �
 참고: [https://www.bytesandwich.com/jekyll/software/blogging/2016/09/14/how-does-jekyll-work.html](https://www.bytesandwich.com/jekyll/software/blogging/2016/09/14/how-does-jekyll-work.html)
 
 
+## Posting 작성
+`_post` 폴더 내에 `YYYY-MM-DD-글제목.md`로 파일을 저장하면 된다. 파일 내용은 일정한 양식을 따라야 하는데, 기본 생성되어 있는 파일을 확인하면 도움이 될 것이다.
+
 ### 사이트 생성
 ```
 bundle exec jekyll build

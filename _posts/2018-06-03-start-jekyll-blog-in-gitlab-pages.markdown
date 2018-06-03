@@ -19,7 +19,7 @@ tags: [jekyll, gitlab-pages]
 
 markdown 문법으로 포스트만 작성해두면, 알아서 HTML 기반의 사이트를 만들어 주는 생성기이다. 기본 테마만으로도 아주 심플한 블로그 형의 사이트를 만들어 주기도 하고, html,css 그리고 ruby를 이용해서 취향에 맞는 사이트를 제작 할 수도 있다.
 
-**Git과 Markdown을 사용할 수 있으면 좋다**
+Git과 Markdown을 사용할 수 있으면 좋다
 
 
 # Local 환경 구축
@@ -32,24 +32,21 @@ Jekyll은 ruby를 기반으로 한다. 따라서 로컬 환경에 ruby와 gem (r
   
 ## ruby 설치
 맥에는 기본적으로 루비가 설치되어 있다. 하지만 최신버전이 아니니까 최신버전을 설치!  
-이를 위해 Homebrew 부터 설치한다.  
-  
-### homebrew 설치 (macOS의 패키지 매니저 - ruby를 설치하기 )  
+이를 위해 Homebrew(macOS의 패키지 매니저)를 설치하고, Homebrew를 이용하여 최신버전의 ruby를 설치한다.
+
 참고: [https://brew.sh/](https://brew.sh/)
+참고: [https://www.ruby-lang.org/ko/documentation/installation/#homebrew](https://www.ruby-lang.org/ko/documentation/installation/#homebrew)
 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-### ruby 설치  
-참고: [https://www.ruby-lang.org/ko/documentation/installation/#homebrew](https://www.ruby-lang.org/ko/documentation/installation/#homebrew)
 ```
 brew install ruby
 ```
-
   
 ## jekyll 설치
-rubygem을 이용하여 jekyll과 bundler를 설치한다.
+rubygem(ruby와 함께 설치됨)을 이용하여 jekyll과 bundler를 설치한다.
 ```
 gem install jekyll bundler
 ```
@@ -65,17 +62,22 @@ github을 이용하고 싶다면 `username.github.io` 를 사용하면 된다. �
 ## Local에서 jekyll 사이트 돌려보기
 참고: [https://www.bytesandwich.com/jekyll/software/blogging/2016/09/14/how-does-jekyll-work.html](https://www.bytesandwich.com/jekyll/software/blogging/2016/09/14/how-does-jekyll-work.html)
 
+**패키지 설치**  
 
-## Posting 작성
-`_post` 폴더 내에 `YYYY-MM-DD-글제목.md`로 파일을 저장하면 된다. 파일 내용은 일정한 양식을 따라야 하는데, 기본 생성되어 있는 파일을 확인하면 도움이 될 것이다.
 
-### 사이트 생성
+생성한 폴더로 이동한 뒤, 필요한 패키지를 설치한다.
+```
+bundle
+```
+
+
+**사이트 생성**  
 ```
 bundle exec jekyll build
 ```
 프로젝트 폴더 내에 `_site` 폴더를 생성해준다. 이 폴더만으로도 하나의 웹사이트가 완성되는 것이다.
 
-### 웹서버 실행
+**웹서버 실행**  
 ```
 bundle exec jekyll serve
 ```
@@ -83,7 +85,20 @@ bundle exec jekyll serve
 위 명령어 대신 `bundle exec jekyll serve --watch`를 실행하면 포스트를 작성하면서 변경내용이 자동으로 반영(빌드)되도록 할 수 있다.
 
 
-# Gitlab-pages 설정하여 [https://username.gitlab.io/](https://username.gitlab.io/)에 블로그 호스팅
+## Posting 작성
+`_post` 폴더 내에 `YYYY-MM-DD-글제목.md`로 파일을 저장하면 된다. 파일 내용은 일정한 양식을 따라야 하는데, 기본 생성되어 있는 파일을 확인하면 도움이 될 것이다.
+
+```
+---
+layout: post
+title: 포스트 제목
+---
+
+포스트 내용 (markdown 문법으로 작성해야 함)
+```
+
+
+# Gitlab-pages 설정하여 블로그 호스팅
 
 ## Repository 설정
 일단 Project(Repository)를 생성하고, 변경내용을 commit/push 한다.
@@ -95,7 +110,9 @@ bundle exec jekyll serve
 ## Local project 추가 설정
 
 Gitlab의 CI (Continuous Integration) 기능을 이용하기 위한 설정
+
 Project 폴더 내에 `.gitlab-ci.yml` 파일을 만든다. 내용은..
+
 ```
 image: ruby:2.3
 
@@ -140,16 +157,18 @@ url: "https://username.gitlab.io"
 
 ## Local project와 repository 연결하기
 ```
-> git remote add origin https://gitlab.com/username/username.gitlab.io.git
+$ git remote add origin https://gitlab.com/username/username.gitlab.io.git
 
-> git add .
+$ git add .
 
-> git commit -m "Initial commit"
+$ git commit -m "Initial commit"
 
-> git push -u origin master
+$ git push -u origin master
 ```
 
-push까지 완료하면 곧 gitlab의 CI 기능이 실행되며 jekyll build 가 실행된다. 빌드가 완료되면 [https://username.gitlab.io](https://username.gitlab.io) 를 이용해 사이트를 볼 수 있게 된다.
+*($는 빼고 입력해야 한다)*
+
+push까지 완료하면 곧 gitlab의 CI 기능이 실행되며 jekyll build 가 실행된다. 빌드가 완료되면 https://username.gitlab.io 를 통해 사이트를 볼 수 있게 된다.
 
 
 # Github-pages 이용하기
@@ -161,6 +180,11 @@ Github에서는 별도의 CI 설정이 필요없다..... (아니! 그럼 그냥 
 
 
 # 맺음말
-CSS 는 손을 좀 봐야할 것 같다. 기본 태그에 대한 스타일이 조금 맘에 안드네. margin 정도만 맞춰줘도 될 듯.
 
-Git, CI에 관해서는 별도로 다룰 일이 있을 것 같다. 
+* CSS 는 손을 좀 봐야할 것 같다. 기본 태그에 대한 스타일이 조금 맘에 안드네. margin 정도만 맞춰줘도 될 듯. -- 결국 포스트 구조도 바꿈;;; --
+
+* 댓글 기능은 추후 여유를 가지고 추가하기로..
+
+* Git, CI에 관해서는 별도로 다룰 일이 있을 것 같다. 
+
+* 기술 블로그 및 생각을 담기위한 공간으로 잘 사용하자.

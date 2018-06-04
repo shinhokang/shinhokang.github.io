@@ -82,7 +82,13 @@ bundle exec jekyll serve
 ```
 웹서버를 실행한다. 브라우져에서 [http://127.0.0.1:4000](http://127.0.0.1:4000)를 통해 현재 상태의 사이트를 열어볼 수 있다.  
 
-터미널을 두개 열어두고, `bundle exec jekyll build --watch` 와 `bundle exec jekyll serve`를 실행해두면 포스트를 작성하면서 변경내용이 자동으로 반영(빌드)되도록 할 수 있다.
+### 글을 쓰면서 변경내용 바로 확인하기
+~~터미널을 두개 열어두고, `bundle exec jekyll build --watch` 와 `bundle exec jekyll serve`를 실행해두면 포스트를 작성하면서 변경내용이 자동으로 반영(빌드)되도록 할 수 있다.~~
+
+```
+bundle exec jekyll serve --livereload
+```
+변경사항이 저장될 때 마다 빌드를 다시하고, 자동으로 브라우저 리로드를 한다. 
 
 
 ## Post 작성

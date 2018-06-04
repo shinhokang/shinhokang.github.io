@@ -80,8 +80,9 @@ bundle exec jekyll build
 ```
 bundle exec jekyll serve
 ```
-프로젝트 폴더 내에 `_site` 폴더를 생성해주고, 웹서버를 실행한다. 브라우져에서 [http://127.0.0.1:4000](http://127.0.0.1:4000)를 통해 현재 상태의 사이트를 열어볼 수 있다.  
-위 명령어 대신 `bundle exec jekyll serve --watch`를 실행하면 포스트를 작성하면서 변경내용이 자동으로 반영(빌드)되도록 할 수 있다.
+웹서버를 실행한다. 브라우져에서 [http://127.0.0.1:4000](http://127.0.0.1:4000)를 통해 현재 상태의 사이트를 열어볼 수 있다.  
+
+터미널을 두개 열어두고, `bundle exec jekyll build --watch` 와 `bundle exec jekyll serve`를 실행해두면 포스트를 작성하면서 변경내용이 자동으로 반영(빌드)되도록 할 수 있다.
 
 
 ## Post 작성

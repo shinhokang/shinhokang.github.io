@@ -38,3 +38,7 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+assets:
+  assets:
+    - "images/"

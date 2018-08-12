@@ -3,7 +3,7 @@ layout: post
 title: '독일 회사 개발자 - 한국에서 원격근무하기 (Remote Working)'
 author: shinho.kang
 date: 2018-08-12 11:00
-tags: []
+tags: [Remote work, 원격근무, 독일회사]
 ---
 
 # Why I started remote work

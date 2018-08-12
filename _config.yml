@@ -42,3 +42,6 @@ plugins:
 assets:
   assets:
     - "images/"
+
+exclude:
+  - vendor
